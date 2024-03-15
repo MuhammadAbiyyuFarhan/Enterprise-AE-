@@ -1,0 +1,69 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+html {
+    background-color: #f4f9f9;
+    background-image: url('polman.jpg'); /* URL gambar latar belakang */
+    background-size: cover; /* Memastikan gambar meliputi seluruh area kontainer */
+    background-position: center; /* Posisi gambar di tengah-tengah */
+}
+
+#app {
+    width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #262f3f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center; /* Menengahkan teks secara horizontal */
+    color: #fff; /* Warna teks judul putih */
+}
+
+h4 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #fff; /* Warna teks judul putih */
+}
+
+h5{
+    text-align: center;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: center; /* Menengahkan isi form */
+}
+
+.form-control {
+    width: 100%; /* Ubah lebar menjadi 100% */
+    max-width: 350px; /* Atur lebar maksimum */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.error-message {
+    color: red; /* Warna teks merah */
+}
+
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
