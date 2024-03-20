@@ -4,7 +4,7 @@ include_once "../config/dbconnect.php";
 if(isset($_POST['upload']))
 {
     // Mengambil nilai dari input formulir
-    $pemesanan = $_POST['pemesan'];
+    $pemesan = $_POST['pemesan'];
     $no_order = $_POST['No_Order'];
     $produk = $_POST['Produk'];
     $pic = $_POST['PIC'];
@@ -14,7 +14,7 @@ if(isset($_POST['upload']))
     // Menjalankan kueri untuk memasukkan data ke dalam tabel "project"
     $insert = mysqli_query($conn, "INSERT INTO project
         (pemesan, `No Order`, Produk, PIC, Deadline, Status) 
-        VALUES ('$pemesanan', '$no_order', '$produk', '$pic', '$deadline', '$status')");
+        VALUES ('$pemesan', '$no_order', '$produk', '$pic', '$deadline', '$status')");
 
     // Memeriksa apakah penyisipan data berhasil atau tidak
     if($insert)

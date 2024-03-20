@@ -13,8 +13,11 @@ if(isset($_POST['user_id'])) {
 
     // Periksa apakah penghapusan berhasil
     if($result) {
-        // Redirect kembali ke halaman pengguna
-        header("Location: ../index.php");
+        // Tampilkan pesan alert sebelum mengarahkan pengguna
+        echo "<script>
+                alert('User is deleted');
+                window.location.href = '../index.php'; // Arahkan ke halaman pengguna setelah alert ditampilkan
+             </script>";
         exit(); // Pastikan tidak ada output lain sebelum redirect
     } else {
         echo "Unable to delete user.";

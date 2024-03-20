@@ -231,6 +231,8 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `role`) VALUES
 (32, 'Vincent', 'e10adc3949ba59abbe56e057f20f883e', 'SuperAdmin'),
 (42, 'Sugeng', '827ccb0eea8a706c4c34a16891f84e7b', 'Admin');
 
+
+
 -- --------------------------------------------------------
 
 --

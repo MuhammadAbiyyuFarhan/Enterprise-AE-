@@ -1,5 +1,5 @@
 <div >
-  <h2>All Customers</h2>
+  <h2>All Users</h2>
   <!-- Tombol untuk membuka modal -->
   <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addUserModal" style="height: 40px;">Add User</button>
   <table class="table ">
@@ -65,8 +65,8 @@
           <div class="form-group">
             <label for="role">Role:</label>
             <select name="role" id="role" class="form-control" required>
-              <option value="admin">Admin</option>
-              <option value="super_admin">Super Admin</option>
+              <option value="Admin">Admin</option>
+              <option value="SuperAdmin">Super Admin</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary" name="submit">Submit</button>

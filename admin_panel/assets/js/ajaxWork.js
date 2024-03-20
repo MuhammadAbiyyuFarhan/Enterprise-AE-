@@ -236,9 +236,9 @@ function categoryDelete(id){
         method:"post",
         data:{record:id},
         success:function(data){
-            alert('Category Successfully deleted');
+            alert('Project berhasil dihapus');
             $('form').trigger('reset');
-            showCategory();
+            location.reload(); // Memuat ulang halaman setelah penghapusan berhasil
         }
     });
 }

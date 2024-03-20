@@ -1,7 +1,7 @@
 <!-- Sidebar -->
 <div class="sidebar" id="mySidebar">
 <div class="side-header">
-    <img src="./assets/images/logo.png" width="120" height="120" alt="Swiss Collection"> 
+<img src="./assets/images/logo.png" width="80" height="80" alt="Swiss Collection" style="border-radius: 50%;">
     <?php
         // Check if the user is logged in
         if(isset($_SESSION['username'])) {
