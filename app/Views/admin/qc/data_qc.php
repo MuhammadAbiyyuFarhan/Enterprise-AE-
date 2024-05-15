@@ -1,3 +1,37 @@
+<?php
+    // Koneksi ke database
+    $koneksi = new mysqli("localhost", "root", "", "swiss_collection");
+
+    // Periksa koneksi
+    if ($koneksi->connect_error) {
+        die("Koneksi gagal: " . $koneksi->connect_error);
+    }
+
+    // Ambil data proyek dari tabel 'project'
+    $sql = "SELECT * FROM qc";
+    $result = $koneksi->query($sql);
+
+    $projects = []; // Array untuk menyimpan data proyek
+
+    if ($result->num_rows > 0) {
+        // Mengambil setiap baris hasil kueri dan menyimpannya sebagai objek dalam array
+        while ($row = $result->fetch_assoc()) {
+            $projects[] = (object) $row;
+        }
+    } else {
+        echo "0 hasil";
+    }
+
+    // Tutup koneksi
+    $koneksi->close();
+
+    // // Debugging print
+    // echo "<pre>";
+    // print_r($projects);
+    // echo "</pre>";
+    ?>
+
+
 
 <section class="content-header">
 	<h1>

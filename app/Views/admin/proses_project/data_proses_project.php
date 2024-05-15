@@ -1,4 +1,3 @@
-
 <section class="content-header">
 	<h1>
 	<a href="index.php">
@@ -70,20 +69,21 @@
 							<td>
 								<?php echo $data['status']; ?>
 							</td>
-
 							<td>
-								<a href="?page=MyApp/more_project&kode=<?php echo $data['project_id']; ?>" title="Info"
-								 class="btn btn-success">
-									<i class="glyphicon glyphicon-edit"></i>
-								
-								<a href="?page=MyApp/edit_project&kode=<?php echo $data['project_id']; ?>" title="Ubah"
-								 class="btn btn-success">
-									<i class="glyphicon glyphicon-edit"></i>
-								
-								<a href="?page=MyApp/del_project&kode=<?php echo $data['project_id']; ?>" onclick="return confirm('Yakin Hapus Project Ini ?')"
-								 title="Hapus" class="btn btn-danger">
-									<i class="glyphicon glyphicon-trash"></i>
+								<?php echo $data['status']; ?>
 							</td>
+
+									<td>
+										<a href="?page=MyApp/more_project&kode=<?php echo $data['project_id']; ?>" title="Info" class="btn btn-success">
+											<i class="glyphicon glyphicon-edit"></i>
+										</a>
+										<a href="?page=MyApp/edit_project&kode=<?php echo $data['project_id']; ?>" title="Ubah" class="btn btn-success">
+											<i class="glyphicon glyphicon-edit"></i>
+										</a>
+										<a href="?page=MyApp/del_project&kode=<?php echo $data['project_id']; ?>" onclick="return confirm('Yakin Hapus Project Ini ?')" title="Hapus" class="btn btn-danger">
+											<i class="glyphicon glyphicon-trash"></i>
+										</a>
+									</td>
 						</tr>
 						<?php
                   }

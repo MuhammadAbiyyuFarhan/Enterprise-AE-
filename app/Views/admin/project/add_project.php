@@ -39,13 +39,65 @@
 
 						<div class="form-group">
 							<label>Produk</label>
-							<input type="text" name="produk" id="produk" class="form-control" placeholder="Produk" required>
+							<select name="produk" id="produk" class="form-control" required>
+								<option value="">Pilih Produk</option>
+								<?php
+								// Koneksi ke database
+								$koneksi = mysqli_connect("localhost", "root", "", "swiss_collection");
+
+								// Periksa koneksi
+								if (mysqli_connect_errno()) {
+									echo "Koneksi database gagal: " . mysqli_connect_error();
+									exit();
+								}
+
+								// Query untuk mengambil data produk dari tabel 'product'
+								$query_product = "SELECT product_name FROM product";
+								$result_product = mysqli_query($koneksi, $query_product);
+
+								// Periksa apakah query berhasil dijalankan
+								if ($result_product) {
+									// Tampilkan nama-nama produk sebagai opsi dalam dropdown list
+									while ($row_product = mysqli_fetch_assoc($result_product)) {
+										echo "<option value='" . $row_product['product_name'] . "'>" . $row_product['product_name'] . "</option>";
+									}
+								} else {
+									echo "Query gagal: " . mysqli_error($koneksi);
+								}
+
+								// Tutup koneksi database
+								mysqli_close($koneksi);
+								?>
+							</select>
 						</div>
 
+
 						<div class="form-group">
-							<label>PIC</label>
-							<input type="text" name="pic" id="pic" class="form-control" placeholder="PIC" required>
-						</div>
+									<label>PIC</label>
+									<select name="pic" id="pic" class="form-control" required>
+										<option value="">Pilih PIC</option>
+										<?php
+										$koneksi = mysqli_connect("localhost","root","","swiss_collection");
+										if (mysqli_connect_errno()) {
+											echo "Koneksi database gagal: " . mysqli_connect_error();
+											exit();
+										}
+										$query_worker = "SELECT nama FROM worker";
+										$result_worker = mysqli_query($koneksi, $query_worker);
+										if ($result_worker) {
+											while ($row_worker = mysqli_fetch_assoc($result_worker)) {
+												echo "<option value='" . $row_worker['nama'] . "'>" . $row_worker['nama'] . "</option>";
+											}
+										} else {
+											echo "Query gagal: " . mysqli_error($koneksi);
+										}
+
+										// Tutup koneksi database
+										mysqli_close($koneksi);
+										?>
+									</select>
+								</div>
+
 
 						<div class="form-group">
 							<label>Deadline</label>
@@ -90,7 +142,7 @@
 
 		if ($query_simpan) {
 			echo "<script>
-			Swal.fire({title: 'Tambah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
+			Swal.fire({title: 'Tambah Data Berhasil',text: '',iDcon: 'success',confirmButtonText: 'OK'
 			}).then((result) => {if (result.value){
 			  window.location = 'index.php?page=MyApp/data_project';
 			  }

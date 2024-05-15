@@ -38,9 +38,30 @@
 						</div>
 
 						<div class="form-group">
-							<label>PIC</label>
-							<input type="text" name="pic" id="pic" class="form-control" placeholder="PIC" required>
-						</div>
+									<label>PIC</label>
+									<select name="pic" id="pic" class="form-control" required>
+										<option value="">Pilih PIC</option>
+										<?php
+										$koneksi = mysqli_connect("localhost","root","","swiss_collection");
+										if (mysqli_connect_errno()) {
+											echo "Koneksi database gagal: " . mysqli_connect_error();
+											exit();
+										}
+										$query_worker = "SELECT nama FROM worker";
+										$result_worker = mysqli_query($koneksi, $query_worker);
+										if ($result_worker) {
+											while ($row_worker = mysqli_fetch_assoc($result_worker)) {
+												echo "<option value='" . $row_worker['nama'] . "'>" . $row_worker['nama'] . "</option>";
+											}
+										} else {
+											echo "Query gagal: " . mysqli_error($koneksi);
+										}
+
+										// Tutup koneksi database
+										mysqli_close($koneksi);
+										?>
+									</select>
+								</div>
 
 						<div class="form-group">
 							<label>Status</label>
